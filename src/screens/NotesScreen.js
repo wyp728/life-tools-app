@@ -3,7 +3,7 @@ import { View, Text, FlatList, StyleSheet, Platform, TouchableOpacity, Alert, Te
 import axios from 'axios';
 import { useIsFocused } from '@react-navigation/native';
 
-const API_BASE = 'https://3176af5c899d7c.lhr.life'; // 使用高可用免验证隧道
+const API_BASE = process.env.EXPO_PUBLIC_API_URL || 'https://life-tools-api-v4.loca.lt'; // 使用环境变量或默认隧道地址
 
 export default function NotesScreen() {
   const [notes, setNotes] = useState([]);

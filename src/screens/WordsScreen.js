@@ -5,7 +5,7 @@ import * as Speech from 'expo-speech';
 import { useIsFocused } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
-const API_BASE = 'https://3176af5c899d7c.lhr.life'; // 使用高可用免验证隧道
+const API_BASE = process.env.EXPO_PUBLIC_API_URL || 'https://life-tools-api-v4.loca.lt'; // 使用环境变量或默认隧道地址
 
 export default function WordsScreen() {
   const [words, setWords] = useState([]);
